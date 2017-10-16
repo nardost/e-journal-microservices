@@ -15,7 +15,7 @@ public class EJournalMicroservicesApplication {
 	}
 	
 	@Bean
-	public SubscriberRegistrationTask SubscriberRegistrationTask() {
+	public SubscriberRegistrationTask subscriberRegistrationTask() {
 		return new SubscriberRegistrationTask();
 	}
 	
@@ -24,7 +24,9 @@ public class EJournalMicroservicesApplication {
 		@Override
 		public void run(String ... strings) throws Exception {
 			if(strings != null) {
-				System.out.println("Subscriber: " + strings);
+				for(String string : strings) {
+					System.out.println("Subscriber: " + string);
+				}
 			}
 		}
 	}
